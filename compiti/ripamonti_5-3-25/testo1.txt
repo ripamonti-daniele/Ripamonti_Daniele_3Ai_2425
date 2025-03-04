@@ -1,0 +1,30 @@
+flauto
+chitarra
+pianoforte
+tromba
+xilofono
+flauto traverso
+violino
+viola
+violoncello
+clarinetto
+sassofono
+chitarra elettrica
+organo
+batteria
+arpa
+corno francese
+ukulele
+fisarmonica
+mandolino
+tamburello
+tamburo
+oboe
+contrabbasso
+liuto
+cornamusa
+clavicembalo
+piatti
+vibrafono
+tuba
+bongo
