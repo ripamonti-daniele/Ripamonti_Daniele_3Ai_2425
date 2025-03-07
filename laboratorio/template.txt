@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>%titoloPagina%</title>
+        <style>
+            body{
+                background-color: %colore%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>%titoloPagina%</h1>
+        <p>ciamo mi chiamo %nome% %cognome%</p>
+    </body>
+</html>

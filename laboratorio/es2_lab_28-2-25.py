@@ -39,41 +39,43 @@ for i in file:
         
     else:
         print("errore nella ricerca dei file")
-        
-parole_50 = []
-x = 0
 
-while len(parole_50) < 50 and len(parole) > 0:
-    for key, value in parole.items():
-        if value >= x:
-            x = value
-            p = key
-            
-    parole_50.append(p)
-    parole.pop(p)
+if len(parole) > 0:
+
+    parole_50 = []
     x = 0
 
-tot_lettere = 0
-for i in lettere.values():
-    tot_lettere += i
-   
-for key, value in lettere.items():
-    lettere[key] = round(value / tot_lettere, 2)
+    while len(parole_50) < 50 and len(parole) > 0:
+        for key, value in parole.items():
+            if value >= x:
+                x = value
+                p = key
+                
+        parole_50.append(p)
+        parole.pop(p)
+        x = 0
 
-# messa a schermo
-print(f"{len(parole_50)} parole più utilizzate:")
-for i in range(len(parole_50)):
-    print(i + 1, "-->", parole_50[i])
+    tot_lettere = 0
+    for i in lettere.values():
+        tot_lettere += i
     
-print("\n---------------------------------\n")
+    for key, value in lettere.items():
+        lettere[key] = round(value / tot_lettere, 2)
 
-print("frequenze lettere:")
-for key, value in lettere.items():
-    print(key, "-->", value)
+    # messa a schermo
+    print(f"{len(parole_50)} parole più utilizzate:")
+    for i in range(len(parole_50)):
+        print(i + 1, "-->", parole_50[i])
+        
+    print("\n---------------------------------\n")
+
+    print("frequenze lettere:")
+    for key, value in lettere.items():
+        print(key, "-->", value)
 
 
-print("\n---------------------------------\n")
+    print("\n---------------------------------\n")
 
-print("parolacce:")
-for key, value in parolacce.items():
-    print(key, "--> scritta", value, "volte")
+    print("parolacce:")
+    for key, value in parolacce.items():
+        print(key, "--> scritta", value, "volte")

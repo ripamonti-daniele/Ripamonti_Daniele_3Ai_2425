@@ -1,4 +1,5 @@
 from os import system
+# from ../../funzioni/funzioni.modulo_ricerca import ricerca_lineare_migliorata
 from funzioni.modulo_ricerca import ricerca_lineare_migliorata
 system("cls")
 

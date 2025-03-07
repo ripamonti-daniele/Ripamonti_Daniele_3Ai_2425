@@ -57,9 +57,6 @@ if os.path.exists(nome_file):
     f = open(nome_file, "w", encoding="utf-8")
     f.write(codifica)
     
-    f = open(nome_file, "r", encoding="utf-8")
-    x = f.read()
-    
     f.close()
 
 else:
