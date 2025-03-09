@@ -4,9 +4,6 @@ system("cls")
 
 manga = {
     "Dragonball": ("Akira Toryiama", "Shūeisha", 42, True),
-    "aaaaa": ("Akira Toryiama", "Shūeisha", 23, True),
-    "cccc": ("Akira Toryiama", "Shūeisha", 11, False),
-    "bbbbb": ("Akira Toryiama", "Shūeisha", 102, False),
     "One Piece": ("Eiichiro Oda", "Shūeisha", 109, False)
 }
 
