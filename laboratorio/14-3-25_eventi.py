@@ -109,9 +109,9 @@ def modifica(eventi):
         sclt = input("inserisci 1 oppure 2: ")
 
     if sclt == "1":
-        eventi[nome] = chiedi_data()
+        eventi[nome][1] = chiedi_data()
     elif sclt == "2":
-        eta_min = chiedi_numero("inserisci l'età minima per partecipare", minimo = 5, massimo = 100)
+        eventi[nome][2] = chiedi_numero("inserisci l'età minima per partecipare", minimo = 5, massimo = 100)
 
 def elimina(eventi):
     nome = chiedi_nome(eventi.keys(), False, "nome")
