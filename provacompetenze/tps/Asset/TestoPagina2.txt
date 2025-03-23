@@ -1,0 +1,34 @@
+Python, che cos'è?
+
+Python è un linguaggio di programmazione ad alto livello, versatile e di facile apprendimento. Creato da Guido van Rossum nel 1991, è oggi uno dei linguaggi più popolari grazie alla sua sintassi chiara e leggibile, che riduce la complessità del codice e ne facilita la manutenzione. Uno dei punti di forza di Python è la sua vasta libreria standard, che include moduli per la gestione di file, il networking, la manipolazione di dati e lo sviluppo web. Inoltre, grazie alla presenza di framework e librerie come Django, Flask, NumPy, Pandas, TensorFlow e PyTorch, Python è ampiamente utilizzato in ambiti come lo sviluppo web, la data science, l'intelligenza artificiale, l'apprendimento automatico e l'automazione dei processi. Python supporta diversi paradigmi di programmazione, tra cui la programmazione orientata agli oggetti, funzionale e procedurale, rendendolo flessibile per vari tipi di progetti. La sua compatibilità multipiattaforma consente di eseguire codice su diversi sistemi operativi senza modifiche significative. Grazie alla sua comunità attiva e alla vasta documentazione disponibile, Python è una scelta eccellente sia per principianti che per sviluppatori esperti, contribuendo alla sua continua crescita e adozione nel mondo dell'informatica.
+
+
+L'approccio top down
+
+L'approccio top-down nella programmazione è una metodologia di problem-solving che parte dall'analisi generale del problema per poi scomporlo progressivamente in sotto-problemi più semplici. Questo metodo è particolarmente utile nello sviluppo di software complessi, poiché consente di mantenere una visione chiara della struttura complessiva del programma prima di implementarne i dettagli.
+
+Nel top-down, si inizia definendo il problema principale e progettando una soluzione a livello astratto, spesso attraverso diagrammi di flusso o pseudocodice. Successivamente, il problema viene suddiviso in moduli o funzioni più specifiche, ciascuna con un compito ben definito. Questo approccio favorisce il riutilizzo del codice, la manutenibilità e la scalabilità del software.
+
+Un esempio pratico è la creazione di un software per la gestione di una libreria: inizialmente, si definiscono operazioni generali come "gestire i libri" e "gestire gli utenti", che poi vengono scomposte in funzioni più dettagliate come "aggiungere un libro" o "registrare un utente".
+
+L'approccio top-down è spesso contrapposto al metodo bottom-up, che invece parte dai dettagli per costruire soluzioni più complesse. Entrambi sono utili e spesso combinati per una progettazione ottimale.
+
+
+
+Il Formato JSON
+
+JSON (JavaScript Object Notation) è un formato di interscambio dati leggero e di facile lettura. È utilizzato principalmente per la comunicazione tra client e server nelle applicazioni web e API.
+
+La struttura JSON è basata su coppie chiave-valore racchiuse tra parentesi graffe {}. Le chiavi sono stringhe, mentre i valori possono essere stringhe, numeri, booleani, array o oggetti.
+
+Esempio di JSON:
+
+                {
+                  "nome": "Mario",
+                  "eta": 30,
+                  "hobby": ["calcio", "lettura", "musica"],
+                  "isStudente": false
+                }
+                    
+
+JSON è ampiamente utilizzato nelle API REST, nei database NoSQL come MongoDB e nei file di configurazione, grazie alla sua leggerezza e semplicità.
