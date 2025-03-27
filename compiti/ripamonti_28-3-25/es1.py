@@ -1,6 +1,7 @@
 from os import system
 system("cls")
 from modulo_ordinamento import insertion_sort
+import json
 
 strumenti = {}
 
@@ -91,18 +92,17 @@ def carica(path):
         print("file non trovato")
         
     if avanti:
-        d = {}
-        for r in f:
-            r = r.replace("\n", "")
-            dati = r.split("|")
-            try:
-                d[(dati[0], dati[1], dati[2])] = int(dati[3])
-            except ValueError:
-                print("errore: dati salvati in ordine inadeguato")
+        d = json.load(f)
+        f.close()
+        nuovo = {}
+        
+        for i in d.keys():
+            i = str(i)
+            chiavi = i.split("|")
+            nuovo[(chiavi[0], chiavi[1], chiavi[2])] = d[i]
                 
         print("dati caricati")
-        f.close()
-        return d
+        return nuovo
         
 def salva(path, d):
     avanti = False
@@ -112,14 +112,18 @@ def salva(path, d):
     except FileNotFoundError:
         print("file non trovato")
     
-    if avanti:
-        for i in d.keys():
-            for j in i:
-                f.write(j + "|")
-            f.write(str(d[i]) + "\n")
-        print("dati salvati")
+    if avanti:   
+        nuovo = {}
+        for i in d:
+            nuovo[i[0] + "|" + i[1] + "|" + i[2]] = d[i]
+            
+        x = json.dumps(nuovo, indent=4)
+        
+        f.write(x)
+        
         f.close()
-
+        print("dati salvati")
+        
 def menu():
     print("inserisci 1 per creare uno strumento o aggiungere dei pezzi")
     print("inserisci 2 per eliminare uno strumento")
@@ -151,8 +155,8 @@ while sclt != 0:
         case 4:
             vendi(strumenti)
         case 5:
-            strumenti = carica("compiti\\ripamonti_17-3-25\\dati.txt")
+            strumenti = carica("compiti\\ripamonti_28-3-25\\dati.json")
         case 6:
-            salva("compiti\\ripamonti_17-3-25\\dati.txt", strumenti)
+            salva("compiti\\ripamonti_28-3-25\\dati.json", strumenti)
             
     print()
