@@ -12,6 +12,8 @@ def main(page: ft.Page):
     page.title = "Inscrizione Tornei Fine Anno"
     ft.VerticalAlignment = ft.MainAxisAlignment.START
 
+    # funzioni
+    
     def controllo_nome(e):
         if len(e.data) > 0 and not(e.data.isalpha()):
             msg_nome.value = "Errore: caratteri non validi"
@@ -67,8 +69,36 @@ def main(page: ft.Page):
         opzioni.update()
         
     def invia(e):
-        pass
-
+        msg = ""
+        colore = "#ff0000"
+        if len(txt_nome.value) == 0 or msg_nome.value != "":
+            msg = "Errore: nome non valido"
+        elif len(txt_cognome.value) == 0 or msg_cognome.value != "":
+            msg = "Errore: cognome non valido"
+        elif len(txt_anno.value) == 0 or msg_anno.value != "":
+            msg = "Errore: anno di nascita non valido"
+        elif scelta_sesso.value == None:
+            msg = "Errore: indica il tuo sesso"  
+        elif scelta_sport.value == None:
+            msg = "Errore: scegli un torneo"  
+        elif scelta_console.value == None:
+            msg = "Errore: indica la tua console preferita"  
+        elif classe.value == None:
+            msg = "Errore: scegli la tua classe"  
+        elif opzioni.value == None:
+            msg = "Errore: scegli la tua sezione"
+        elif opzioni.value not in sezioni[int(classe.value) - 1]:
+            msg = "Errore: sezione non valida"
+        else:
+            msg = "Iscrizione inviata"
+            colore = "#00ff00"
+            
+        msg_invio.value = msg
+        msg_invio.color = colore
+        msg_invio.update()
+    
+    # variabili
+        
     txt_nome = ft.TextField(label="Nome", on_change=controllo_nome)
     msg_nome = ft.Text("", color="#ff0000", size=18, weight=ft.FontWeight.BOLD)
     
@@ -84,7 +114,6 @@ def main(page: ft.Page):
         ft.Radio(value="Donna", label="Donna", scale=1.1),
         ]))
 
-    # searchbar classe
     sezioni = [["A", "B", "C", "D", "E", "F", "G", "H", "Z"], 
               ["A", "B", "C", "D", "E", "F", "G", "H", "I", "L"],
               ["Al", "Aa", "Ac", "Ae", "Ai", "At", "Ba", "Bi"],
@@ -122,11 +151,20 @@ def main(page: ft.Page):
         ])) 
     
     invio = ft.Button(text="Invio", on_click=invia, width=150, height=50, style=ft.ButtonStyle(text_style=ft.TextStyle(size=20)), bgcolor="#ffff66")
-    
+    msg_invio = ft.Text("", size=25, color="#ff0000", weight=ft.FontWeight.BOLD)
+
+    # messa a schermo
+ 
     page.add(
         ft.Row(
             [
-                ft.Text("Iscrizione Tornei Fine Anno", size=40, weight=ft.FontWeight.BOLD)
+                ft.Text(
+                    "Iscrizione Tornei Fine Anno",
+                    size=40,
+                    weight=ft.FontWeight.BOLD,
+                    color="#0000FF",
+                    italic=True
+                )
             ],
             alignment=ft.MainAxisAlignment.CENTER
         ),
@@ -215,7 +253,14 @@ def main(page: ft.Page):
         
         ft.Row(
             [
-                invio
+                ft.Column(
+                    [
+                        msg_invio,
+                        invio,
+                    ],
+                    alignment=ft.MainAxisAlignment.CENTER,
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER
+                )
             ], 
             alignment=ft.MainAxisAlignment.CENTER
         )
