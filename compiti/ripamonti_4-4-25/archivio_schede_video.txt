@@ -1,0 +1,3 @@
+Nvidia         Rtx 4070       Rtx 4070 ti    Rtx 2060       Rtx 1080 ti    
+Amd            Rx 7900 xtx    Rx 7600        Rx 7800 xt     
+Intel          Arc a770       Arc a750       
